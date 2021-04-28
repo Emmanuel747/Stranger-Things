@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>Stranger Things</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="./Forum-AuthStyle.css">
+  <script defer src="./Forum-AuthApp.js"></script>
+</head>
+<body>
+   <header>
+      <div class="logo">Stranger Things</div>
+      <nav class="menu">
+            <ul>
+               <div class="search-form">
+                     <input  id="search_input"type="text" name="search" placeholder="Search 2101-LSU-FullStack">
+                  <a class="close">
+                     <i class="fa fa-times"></i>
+                  </a>
+               </div>
+               <li>
+                  <a href="#" id="search">
+                     <i class="fa fa-search"></i>
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="Home_btn menu-item">Home</a>
+               </li>
+               <li>
+                  <a class="create_btn menu-item" href="#">Create a Listing</a>
+               </li>
+               <li>
+                  <a class="msgOpen_btn menu-item"href="#">Messages</a>
+               </li>
+               <li>
+                  <a class="menu-item" id="usernameNav" href="#"></a>
+               </li>
+               <li>
+                  <a class="logout_btn menu-item"style="padding-right: 5px;"href="../LoginPage/LoginPage.html"><i class="fa fa-sign-out" style="font-size:35px; align-self:center; margin-top: 5px;"></i></a>
+               </li>
+            </ul>
+      </nav>
+      <div class="menu-toggle">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+   </header>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+   <script>
+      $(document).ready(function () {
+         $('.menu-toggle').click(function () {
+            $('nav').toggleClass('active')
+         })
+      })
+   </script>
+   <main>
+<!-- Create Listing Modal -->
+      <div id="slideOut" class="">
+         <div class="slideOutTab">
+            <div>
+               <p id="pulloutTab">Create Listing</p>
+            </div>
+         </div>
+         <div class="modal-content">
+            <div class="Sell-modal-style_Container">
+               <div class="seller form" id="sellerForm">
+                  <div><h2 class="modal_logo-header">Stranger Things</h2><h2 class="sub_title">Seller Form</h2></div>
+                  <form class="input">
+                  <div class="inputBox">
+                        <label>Strange Title</label>
+                        <input type="text" id="title" placeholder="First Impressions are key!" required>
+                  </div>
+                  <div class="inputBox">
+                        <label>Strange Description</label>
+                        <textarea class="DescriptionInput" id="form-desc-box" msg cols="39" rows="5" type="text" placeholder='Be Creative!&#10;"Keep it Short and Sweet to get more Peeps 👀!"&#10;~Eman' required></textarea>
+                  </div>
+                  <div class="inputBox">
+                        <label>Price</label>
+                        <input type="number" id="Price" placeholder="$ 0.00">
+                  </div>
+                  <div class="inputBox">
+                        <label>Location [City, State Zip] </label>
+                        <input type="text" id="location" placeholder="Ex: Baton Rouge, LA 70811" required>
+                  </div>
+                  <div class="rdo_container" id="remember-box">
+                        <label for="rdo1">
+                           <input type="radio" name="handeling" value="true" id="rdo1" name="radio">
+                           <span class="rdo"></span><span>Delivery Avalible</span>
+                        </label>
+                        <label for="rdo2">
+                           <input type="radio" name="handeling" value="false" id="rdo2" name="radio" checked>
+                           <span class="rdo"></span><span>Pick-up Only</span>
+                        </label>
+                     </div>
+                     <div style='color: red; text-align: center'><label class='selfDes'> &nbsp </label></div>
+                  <div class="inputBox">
+                        <input class="sell_btn" type="submit" name="" value="Let it Go ▶">
+                  </div>
+                  </form>
+                  <p class="lazy_btn"><a href="#">(☞ﾟヮﾟ)☞ <span>Too Lazy to Type?</span> ☜(ﾟヮﾟ☜)</a></p>
+               </div>
+            </div>
+         </div>
+            <div class="modal-footer"> </div>
+         </div>
+      </div>
+<!--   Main Page Content Below     -->
+      <div class="postings-container HIDE" id="myMsgs"> </div>
+
+      <div class="postings-container" id="myHome">
+
+            </div>
+         </div>
+      </div>
+   </main>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> 
+  <script type="text/javascript">
+   $(document).ready(function () {
+       $('#search').click(function () {
+           $('.menu-item').addClass('hide-item')
+           $('.search-form').addClass('active')
+           $('.close').addClass('active')
+           $('#search').hide()
+       })
+       $('.close').click(function () {
+           $('.menu-item').removeClass('hide-item')
+           $('.search-form').removeClass('active')
+           $('.close').removeClass('active')
+           $('#search').show()
+       })
+   })
+   </script>
+</body>
+</html>
